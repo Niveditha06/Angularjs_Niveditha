@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<script src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="Ctrl">
+<p>First name :<input type="text" ng-model="name" placeholder="Enter first name"></p>
+ <p>Last name :<input type="text" ng-model="name1" placeholder="Enter last name"></p>
+Fullname:{{ fullname() }}
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("Ctrl", function($scope) {
+    $scope.name="";
+    $scope.name1="";
+    $scope.fullname=function() {
+        return $scope.name + " " + $scope.name1;
+    };
+});
+</script>
+
+</body>
+</html>

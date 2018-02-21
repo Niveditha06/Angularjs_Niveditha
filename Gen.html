@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+
+  <head>
+
+    <script src="angular.min.js"></script>
+        
+</head>
+
+  
+<body ng-app="myApp">
+       
+<div ng-controller="myCtrl">
+           
+ Gender<br>                          
+<input type="radio" name="gender" ng-model="Val" value="Male" ng-click="getVal()">Male<br>                                  
+ <input type="radio" name="gender" ng-model="Val" value="Female" ng-click="getVal()">Female<br>                     
+Gender: {{change}}
+       
+ </div>
+ 
+  
+ 
+ <script>
+   
+ aap=angular.module('myApp',[])
+    
+.controller('myCtrl',["$scope",function($scope){
+      
+$scope.change='';
+     
+$scope.getVal=function(){
+        
+        
+console.log($scope.Val);
+        
+$scope.change=$scope.Val;
+      }
+    
+}]);
+    
+ 
+ </script>
+ 
+</body>
+
+</html>
